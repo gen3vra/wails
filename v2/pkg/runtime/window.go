@@ -184,3 +184,9 @@ func WindowPrint(ctx context.Context) {
 	appFrontend := getFrontend(ctx)
 	appFrontend.WindowPrint()
 }
+
+// WindowStartDrag requests the frontend to begin an interactive window move.
+func WindowStartDrag(ctx context.Context) {
+    appFrontend := getFrontend(ctx)
+    appFrontend.WindowStartDrag()
+}

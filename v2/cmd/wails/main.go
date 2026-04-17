@@ -45,7 +45,7 @@ func printBulletPoint(text string, args ...any) {
 }
 
 func printFooter() {
-	printer := pterm.PrefixPrinter{
+	/*printer := pterm.PrefixPrinter{
 		MessageStyle: pterm.NewStyle(pterm.FgLightGreen),
 		Prefix: pterm.Prefix{
 			Style: pterm.NewStyle(pterm.FgRed, pterm.BgLightWhite),
@@ -53,7 +53,7 @@ func printFooter() {
 		},
 	}
 	printer.Println("If Wails is useful to you or your company, please consider sponsoring the project:")
-	pterm.Println("https://github.com/sponsors/leaanthony")
+	pterm.Println("https://github.com/sponsors/leaanthony")*/
 }
 
 func bool2Str(b bool) string {

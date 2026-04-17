@@ -161,6 +161,7 @@ type Frontend interface {
 	WindowSetSystemDefaultTheme()
 	WindowSetLightTheme()
 	WindowSetDarkTheme()
+	WindowStartDrag()
 	WindowIsMaximised() bool
 	WindowIsMinimised() bool
 	WindowIsNormal() bool
