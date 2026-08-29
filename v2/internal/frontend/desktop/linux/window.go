@@ -244,6 +244,14 @@ func (w *Window) Hide() {
 	C.ExecuteOnMainThread(C.Hide, C.gpointer(w.asGTKWindow()))
 }
 
+func (w *Window) SetWebviewVisible(visible bool) {
+	if visible {
+		C.ExecuteOnMainThread(C.Show, C.gpointer(w.webview))
+	} else {
+		C.ExecuteOnMainThread(C.Hide, C.gpointer(w.webview))
+	}
+}
+
 func (w *Window) Maximise() {
 	C.ExecuteOnMainThread(C.Maximise, C.gpointer(w.asGTKWindow()))
 }

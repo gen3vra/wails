@@ -190,3 +190,9 @@ func WindowStartDrag(ctx context.Context) {
     appFrontend := getFrontend(ctx)
     appFrontend.WindowStartDrag()
 }
+
+// WindowSetWebviewVisible unmaps or remaps the webview widget so WebKit fully suspends rendering while the window is off-screen
+func WindowSetWebviewVisible(ctx context.Context, visible bool) {
+	appFrontend := getFrontend(ctx)
+	appFrontend.WindowSetWebviewVisible(visible)
+}

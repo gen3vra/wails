@@ -162,6 +162,7 @@ type Frontend interface {
 	WindowSetLightTheme()
 	WindowSetDarkTheme()
 	WindowStartDrag()
+	WindowSetWebviewVisible(visible bool)
 	WindowIsMaximised() bool
 	WindowIsMinimised() bool
 	WindowIsNormal() bool
