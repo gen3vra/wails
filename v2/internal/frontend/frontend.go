@@ -163,6 +163,10 @@ type Frontend interface {
 	WindowSetDarkTheme()
 	WindowStartDrag()
 	WindowSetWebviewVisible(visible bool)
+	WindowCreate(opts options.Window) uint
+	WindowSetVisibleByID(id uint, visible bool)
+	WindowToggleByID(id uint)
+	WindowDestroyByID(id uint)
 	WindowIsMaximised() bool
 	WindowIsMinimised() bool
 	WindowIsNormal() bool

@@ -137,6 +137,10 @@ type Frontend struct {
 	dispatcher frontend.Dispatcher
 
 	originValidator *originvalidator.OriginValidator
+
+	windowsLock  sync.Mutex
+	windows      map[uint]*Window
+	nextWindowID uint
 }
 
 func (f *Frontend) RunMainLoop() {
@@ -213,6 +217,8 @@ func NewFrontend(ctx context.Context, appoptions *options.App, myLogger *logger.
 	}
 
 	result.mainWindow = NewWindow(appoptions, result.debug, result.devtoolsEnabled)
+	result.windows = map[uint]*Window{0: result.mainWindow}
+	result.nextWindowID = 1
 
 	C.fix_signal_handlers_after_gtk_init()
 

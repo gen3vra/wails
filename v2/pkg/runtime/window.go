@@ -196,3 +196,27 @@ func WindowSetWebviewVisible(ctx context.Context, visible bool) {
 	appFrontend := getFrontend(ctx)
 	appFrontend.WindowSetWebviewVisible(visible)
 }
+
+// WindowCreate creates an additional top level window and returns its id
+func WindowCreate(ctx context.Context, opts options.Window) uint {
+	appFrontend := getFrontend(ctx)
+	return appFrontend.WindowCreate(opts)
+}
+
+// WindowSetVisibleByID shows or hides a runtime-created window
+func WindowSetVisibleByID(ctx context.Context, id uint, visible bool) {
+	appFrontend := getFrontend(ctx)
+	appFrontend.WindowSetVisibleByID(id, visible)
+}
+
+// WindowToggleByID toggles a runtime-created window's visibility
+func WindowToggleByID(ctx context.Context, id uint) {
+	appFrontend := getFrontend(ctx)
+	appFrontend.WindowToggleByID(id)
+}
+
+// WindowDestroyByID destroys a runtime-created window
+func WindowDestroyByID(ctx context.Context, id uint) {
+	appFrontend := getFrontend(ctx)
+	appFrontend.WindowDestroyByID(id)
+}

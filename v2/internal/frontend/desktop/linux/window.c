@@ -606,6 +606,33 @@ GtkWidget *SetupWebview(void *contentManager, GtkWindow *window, int hideWindowO
     return webview;
 }
 
+// Scheme registration is skipped (context global, main window already did it) and close only hides so a runtime window can never quit the app
+GtkWidget *SetupRuntimeWebview(void *contentManager, GtkWindow *window, int gpuPolicy)
+{
+    GtkWidget *webview = webkit_web_view_new_with_user_content_manager((WebKitUserContentManager *)contentManager);
+    g_object_set_data(G_OBJECT((WebKitUserContentManager *)contentManager), "webview", webview);
+    g_signal_connect(GTK_WIDGET(window), "delete-event", G_CALLBACK(gtk_widget_hide_on_delete), NULL);
+
+    WebKitSettings *settings = webkit_web_view_get_settings(WEBKIT_WEB_VIEW(webview));
+    webkit_settings_set_user_agent_with_application_details(settings, "wails.io", "");
+
+    switch (gpuPolicy)
+    {
+    case 0:
+        webkit_settings_set_hardware_acceleration_policy(settings, WEBKIT_HARDWARE_ACCELERATION_POLICY_ALWAYS);
+        break;
+    case 1:
+        webkit_settings_set_hardware_acceleration_policy(settings, WEBKIT_HARDWARE_ACCELERATION_POLICY_ON_DEMAND);
+        break;
+    case 2:
+        webkit_settings_set_hardware_acceleration_policy(settings, WEBKIT_HARDWARE_ACCELERATION_POLICY_NEVER);
+        break;
+    default:
+        webkit_settings_set_hardware_acceleration_policy(settings, WEBKIT_HARDWARE_ACCELERATION_POLICY_ON_DEMAND);
+    }
+    return webview;
+}
+
 void DevtoolsEnabled(void *webview, int enabled, bool showInspector)
 {
     WebKitSettings *settings = webkit_web_view_get_settings(WEBKIT_WEB_VIEW(webview));
