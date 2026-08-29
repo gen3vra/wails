@@ -108,6 +108,7 @@ gboolean UnFullscreen(gpointer data);
 // WebView
 GtkWidget *SetupWebview(void *contentManager, GtkWindow *window, int hideWindowOnClose, int gpuPolicy, int disableWebViewDragAndDrop, int enableDragAndDrop);
 GtkWidget *SetupRuntimeWebview(void *contentManager, GtkWindow *window, int gpuPolicy);
+void SetWebviewTransparent(void *webview);
 void LoadIndex(void *webview, char *url);
 void DevtoolsEnabled(void *webview, int enabled, bool showInspector);
 void ExecuteJS(void *data);

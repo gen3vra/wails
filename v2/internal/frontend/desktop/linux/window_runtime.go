@@ -52,6 +52,7 @@ func NewRuntimeWindow(opts options.Window, gpuPolicy int) *Window {
 	C.gtk_window_set_skip_taskbar_hint(result.asGTKWindow(), gtkBool(opts.SkipTaskbar))
 	if opts.Translucent {
 		C.SetWindowTransparency(gtkWindow)
+		C.SetWebviewTransparent(unsafe.Pointer(webview))
 	}
 	if opts.LayerShell != nil && opts.LayerShell.Layer != options.LayerNone {
 		applyLayerShell(result.asGTKWindow(), opts.Title, opts.LayerShell)

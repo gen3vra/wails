@@ -633,6 +633,12 @@ GtkWidget *SetupRuntimeWebview(void *contentManager, GtkWindow *window, int gpuP
     return webview;
 }
 
+void SetWebviewTransparent(void *webview)
+{
+    GdkRGBA colour = {0, 0, 0, 0};
+    webkit_web_view_set_background_color(WEBKIT_WEB_VIEW(webview), &colour);
+}
+
 void DevtoolsEnabled(void *webview, int enabled, bool showInspector)
 {
     WebKitSettings *settings = webkit_web_view_get_settings(WEBKIT_WEB_VIEW(webview));
