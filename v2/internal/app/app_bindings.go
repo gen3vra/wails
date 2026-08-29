@@ -8,12 +8,12 @@ import (
 	"path/filepath"
 
 	"github.com/leaanthony/gosod"
-	"github.com/wailsapp/wails/v2/internal/binding"
-	"github.com/wailsapp/wails/v2/internal/frontend/runtime/wrapper"
-	"github.com/wailsapp/wails/v2/internal/fs"
-	"github.com/wailsapp/wails/v2/internal/logger"
-	"github.com/wailsapp/wails/v2/internal/project"
-	"github.com/wailsapp/wails/v2/pkg/options"
+	"github.com/gen3vra/wails/v2/internal/binding"
+	"github.com/gen3vra/wails/v2/internal/frontend/runtime/wrapper"
+	"github.com/gen3vra/wails/v2/internal/fs"
+	"github.com/gen3vra/wails/v2/internal/logger"
+	"github.com/gen3vra/wails/v2/internal/project"
+	"github.com/gen3vra/wails/v2/pkg/options"
 )
 
 func (a *App) Run() error {

@@ -10,7 +10,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/wailsapp/wails/v2/internal/s"
+	"github.com/gen3vra/wails/v2/internal/s"
 )
 
 const versionFile = "../../cmd/wails/internal/version.txt"

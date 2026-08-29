@@ -4,7 +4,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/wailsapp/wails/v2/internal/frontend/utils"
+	"github.com/gen3vra/wails/v2/internal/frontend/utils"
 )
 
 // Test cases for ValidateAndOpenURL

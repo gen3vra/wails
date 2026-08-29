@@ -4,10 +4,10 @@ import (
 	"context"
 	"sync"
 
-	"github.com/wailsapp/wails/v2/internal/app"
-	"github.com/wailsapp/wails/v2/internal/signal"
-	"github.com/wailsapp/wails/v2/pkg/menu"
-	"github.com/wailsapp/wails/v2/pkg/options"
+	"github.com/gen3vra/wails/v2/internal/app"
+	"github.com/gen3vra/wails/v2/internal/signal"
+	"github.com/gen3vra/wails/v2/pkg/menu"
+	"github.com/gen3vra/wails/v2/pkg/options"
 )
 
 // Application is the main Wails application

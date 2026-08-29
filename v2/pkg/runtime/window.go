@@ -3,7 +3,7 @@ package runtime
 import (
 	"context"
 
-	"github.com/wailsapp/wails/v2/pkg/options"
+	"github.com/gen3vra/wails/v2/pkg/options"
 )
 
 // WindowSetTitle sets the title of the window

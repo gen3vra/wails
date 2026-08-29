@@ -7,15 +7,15 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/wailsapp/wails/v2/internal/shell"
+	"github.com/gen3vra/wails/v2/internal/shell"
 
 	"github.com/pterm/pterm"
 
 	"github.com/jaypipes/ghw"
-	"github.com/wailsapp/wails/v2/cmd/wails/flags"
-	"github.com/wailsapp/wails/v2/internal/colour"
-	"github.com/wailsapp/wails/v2/internal/system"
-	"github.com/wailsapp/wails/v2/internal/system/packagemanager"
+	"github.com/gen3vra/wails/v2/cmd/wails/flags"
+	"github.com/gen3vra/wails/v2/internal/colour"
+	"github.com/gen3vra/wails/v2/internal/system"
+	"github.com/gen3vra/wails/v2/internal/system/packagemanager"
 )
 
 func diagnoseEnvironment(f *flags.Doctor) error {

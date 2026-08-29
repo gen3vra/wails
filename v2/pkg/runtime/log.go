@@ -4,7 +4,7 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/wailsapp/wails/v2/pkg/logger"
+	"github.com/gen3vra/wails/v2/pkg/logger"
 )
 
 // LogPrint prints a Print level message

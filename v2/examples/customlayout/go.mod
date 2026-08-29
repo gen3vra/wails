@@ -4,7 +4,7 @@ go 1.22.0
 
 toolchain go1.24.1
 
-require github.com/wailsapp/wails/v2 v2.1.0
+require github.com/gen3vra/wails/v2 v2.1.0
 
 require (
 	github.com/bep/debounce v1.2.1 // indirect
@@ -36,4 +36,4 @@ require (
 	golang.org/x/text v0.22.0 // indirect
 )
 
-replace github.com/wailsapp/wails/v2 v2.1.0 => ../..
+replace github.com/gen3vra/wails/v2 v2.1.0 => ../..

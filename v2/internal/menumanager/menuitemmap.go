@@ -5,7 +5,7 @@ import (
 	"strconv"
 	"sync"
 
-	"github.com/wailsapp/wails/v2/pkg/menu"
+	"github.com/gen3vra/wails/v2/pkg/menu"
 )
 
 // MenuItemMap holds a mapping between menuIDs and menu items

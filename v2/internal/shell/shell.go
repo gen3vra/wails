@@ -4,6 +4,7 @@ import (
 	"bytes"
 	"os"
 	"os/exec"
+	"strings"
 )
 
 type Command struct {
@@ -62,6 +63,16 @@ func CreateCommand(directory string, command string, args ...string) *exec.Cmd {
 // Will return stdout, stderr and error
 func RunCommand(directory string, command string, args ...string) (string, string, error) {
 	return RunCommandWithEnv(nil, directory, command, args...)
+}
+
+// go mod tidy resolves modules over the network and ignores workspaces, so callers must skip it when a workspace governs the build
+func WorkspaceActive(compiler string, directory string) bool {
+	stdout, _, err := RunCommand(directory, compiler, "env", "GOWORK")
+	if err != nil {
+		return false
+	}
+	gowork := strings.TrimSpace(stdout)
+	return gowork != "" && gowork != "off"
 }
 
 // RunCommandWithEnv will run the given command + args in the given directory and using the specified env.

@@ -20,22 +20,23 @@ import (
 	"time"
 
 	"github.com/samber/lo"
-	"github.com/wailsapp/wails/v2/cmd/wails/flags"
-	"github.com/wailsapp/wails/v2/cmd/wails/internal/gomod"
-	"github.com/wailsapp/wails/v2/cmd/wails/internal/logutils"
+	"github.com/gen3vra/wails/v2/cmd/wails/flags"
+	"github.com/gen3vra/wails/v2/cmd/wails/internal/gomod"
+	"github.com/gen3vra/wails/v2/cmd/wails/internal/logutils"
 	"golang.org/x/mod/semver"
 
-	"github.com/wailsapp/wails/v2/pkg/commands/buildtags"
+	"github.com/gen3vra/wails/v2/pkg/commands/buildtags"
 
 	"github.com/google/shlex"
 
 	"github.com/pkg/browser"
 
 	"github.com/fsnotify/fsnotify"
-	"github.com/wailsapp/wails/v2/internal/fs"
-	"github.com/wailsapp/wails/v2/internal/process"
-	"github.com/wailsapp/wails/v2/pkg/clilogger"
-	"github.com/wailsapp/wails/v2/pkg/commands/build"
+	"github.com/gen3vra/wails/v2/internal/fs"
+	"github.com/gen3vra/wails/v2/internal/process"
+	"github.com/gen3vra/wails/v2/internal/shell"
+	"github.com/gen3vra/wails/v2/pkg/clilogger"
+	"github.com/gen3vra/wails/v2/pkg/commands/build"
 )
 
 const (
@@ -60,7 +61,7 @@ func Application(f *flags.Dev, logger *clilogger.CLILogger) error {
 		return err
 	}
 
-	if !f.SkipModTidy {
+	if !f.SkipModTidy && !shell.WorkspaceActive(f.Compiler, cwd) {
 		// Run go mod tidy to ensure we're up-to-date
 		err = runCommand(cwd, false, f.Compiler, "mod", "tidy")
 		if err != nil {

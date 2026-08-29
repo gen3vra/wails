@@ -1,4 +1,4 @@
-module github.com/wailsapp/wails/v2
+module github.com/gen3vra/wails/v2
 
 go 1.22.0
 

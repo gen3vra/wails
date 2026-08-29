@@ -5,12 +5,12 @@ import (
 	"os"
 	"strings"
 
-	"github.com/wailsapp/wails/v2/cmd/wails/internal"
-	"github.com/wailsapp/wails/v2/internal/colour"
-	"github.com/wailsapp/wails/v2/internal/fs"
-	"github.com/wailsapp/wails/v2/internal/gomod"
-	"github.com/wailsapp/wails/v2/internal/goversion"
-	"github.com/wailsapp/wails/v2/pkg/clilogger"
+	"github.com/gen3vra/wails/v2/cmd/wails/internal"
+	"github.com/gen3vra/wails/v2/internal/colour"
+	"github.com/gen3vra/wails/v2/internal/fs"
+	"github.com/gen3vra/wails/v2/internal/gomod"
+	"github.com/gen3vra/wails/v2/internal/goversion"
+	"github.com/gen3vra/wails/v2/pkg/clilogger"
 )
 
 func SyncGoMod(logger *clilogger.CLILogger, updateWailsVersion bool) error {

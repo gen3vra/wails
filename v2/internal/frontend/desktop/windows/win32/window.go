@@ -9,7 +9,7 @@ import (
 	"syscall"
 	"unsafe"
 
-	"github.com/wailsapp/wails/v2/internal/frontend/desktop/windows/winc"
+	"github.com/gen3vra/wails/v2/internal/frontend/desktop/windows/winc"
 )
 
 const (

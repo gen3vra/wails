@@ -6,7 +6,7 @@ package darwin
 import (
 	"fmt"
 	"github.com/pkg/browser"
-	"github.com/wailsapp/wails/v2/internal/frontend/utils"
+	"github.com/gen3vra/wails/v2/internal/frontend/utils"
 )
 
 // BrowserOpenURL Use the default browser to open the url

@@ -5,7 +5,7 @@ package win32
 import (
 	"syscall"
 
-	"github.com/wailsapp/wails/v2/internal/system/operatingsystem"
+	"github.com/gen3vra/wails/v2/internal/system/operatingsystem"
 )
 
 type HRESULT int32

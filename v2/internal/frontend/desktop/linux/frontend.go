@@ -100,15 +100,15 @@ import (
 	"text/template"
 	"unsafe"
 
-	"github.com/wailsapp/wails/v2/pkg/assetserver"
-	"github.com/wailsapp/wails/v2/pkg/assetserver/webview"
+	"github.com/gen3vra/wails/v2/pkg/assetserver"
+	"github.com/gen3vra/wails/v2/pkg/assetserver/webview"
 
-	"github.com/wailsapp/wails/v2/internal/binding"
-	"github.com/wailsapp/wails/v2/internal/frontend"
-	"github.com/wailsapp/wails/v2/internal/frontend/originvalidator"
-	wailsruntime "github.com/wailsapp/wails/v2/internal/frontend/runtime"
-	"github.com/wailsapp/wails/v2/internal/logger"
-	"github.com/wailsapp/wails/v2/pkg/options"
+	"github.com/gen3vra/wails/v2/internal/binding"
+	"github.com/gen3vra/wails/v2/internal/frontend"
+	"github.com/gen3vra/wails/v2/internal/frontend/originvalidator"
+	wailsruntime "github.com/gen3vra/wails/v2/internal/frontend/runtime"
+	"github.com/gen3vra/wails/v2/internal/logger"
+	"github.com/gen3vra/wails/v2/pkg/options"
 )
 
 var initOnce = sync.Once{}

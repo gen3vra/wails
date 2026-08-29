@@ -8,9 +8,9 @@ import (
 	"runtime"
 
 	"github.com/samber/lo"
-	"github.com/wailsapp/wails/v2/internal/colour"
-	"github.com/wailsapp/wails/v2/internal/shell"
-	"github.com/wailsapp/wails/v2/pkg/commands/buildtags"
+	"github.com/gen3vra/wails/v2/internal/colour"
+	"github.com/gen3vra/wails/v2/internal/shell"
+	"github.com/gen3vra/wails/v2/pkg/commands/buildtags"
 )
 
 // Options for generating bindings
@@ -46,7 +46,7 @@ func GenerateBindings(options Options) (string, error) {
 	genModuleTags := lo.Without(tags, "desktop", "production", "debug", "dev")
 	tagString := buildtags.Stringify(genModuleTags)
 
-	if options.GoModTidy {
+	if options.GoModTidy && !shell.WorkspaceActive(options.Compiler, workingDirectory) {
 		stdout, stderr, err = shell.RunCommand(workingDirectory, options.Compiler, "mod", "tidy")
 		if err != nil {
 			return stdout, fmt.Errorf("%s\n%s\n%s", stdout, stderr, err)

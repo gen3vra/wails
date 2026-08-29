@@ -13,7 +13,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/wailsapp/wails/v2/pkg/options/assetserver"
+	"github.com/gen3vra/wails/v2/pkg/options/assetserver"
 )
 
 type Logger interface {

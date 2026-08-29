@@ -9,8 +9,8 @@ import (
 	"runtime"
 
 	"github.com/samber/lo"
-	"github.com/wailsapp/wails/v2/internal/project"
-	"github.com/wailsapp/wails/v2/pkg/commands/build"
+	"github.com/gen3vra/wails/v2/internal/project"
+	"github.com/gen3vra/wails/v2/pkg/commands/build"
 )
 
 type Dev struct {

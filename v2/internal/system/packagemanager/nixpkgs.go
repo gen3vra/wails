@@ -5,7 +5,7 @@ package packagemanager
 
 import (
 	"encoding/json"
-	"github.com/wailsapp/wails/v2/internal/shell"
+	"github.com/gen3vra/wails/v2/internal/shell"
 )
 
 // Nixpkgs represents the Nixpkgs manager

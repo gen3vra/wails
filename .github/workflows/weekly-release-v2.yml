@@ -207,7 +207,7 @@ jobs:
           echo "## Installation"
           echo ""
           echo '```bash'
-          echo "go install github.com/wailsapp/wails/v2/cmd/wails@${NEW_VERSION}"
+          echo "go install github.com/gen3vra/wails/v2/cmd/wails@${NEW_VERSION}"
           echo '```'
           echo ""
           echo "## Changes"

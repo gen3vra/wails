@@ -5,7 +5,7 @@ package app
 import (
 	"fmt"
 
-	"github.com/wailsapp/wails/v2/pkg/options"
+	"github.com/gen3vra/wails/v2/pkg/options"
 )
 
 func (a *App) Run() error {

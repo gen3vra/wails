@@ -13,12 +13,12 @@ import (
 	"github.com/leaanthony/slicer"
 	"github.com/pkg/errors"
 	"github.com/pterm/pterm"
-	"github.com/wailsapp/wails/v2/cmd/wails/flags"
-	"github.com/wailsapp/wails/v2/internal/colour"
-	"github.com/wailsapp/wails/v2/pkg/buildassets"
-	"github.com/wailsapp/wails/v2/pkg/clilogger"
-	"github.com/wailsapp/wails/v2/pkg/git"
-	"github.com/wailsapp/wails/v2/pkg/templates"
+	"github.com/gen3vra/wails/v2/cmd/wails/flags"
+	"github.com/gen3vra/wails/v2/internal/colour"
+	"github.com/gen3vra/wails/v2/pkg/buildassets"
+	"github.com/gen3vra/wails/v2/pkg/clilogger"
+	"github.com/gen3vra/wails/v2/pkg/git"
+	"github.com/gen3vra/wails/v2/pkg/templates"
 )
 
 func initProject(f *flags.Init) error {

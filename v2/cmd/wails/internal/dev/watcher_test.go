@@ -9,7 +9,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/wailsapp/wails/v2/internal/fs"
+	"github.com/gen3vra/wails/v2/internal/fs"
 )
 
 func Test_processDirectories(t *testing.T) {

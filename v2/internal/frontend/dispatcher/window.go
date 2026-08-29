@@ -6,8 +6,8 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/wailsapp/wails/v2/internal/frontend"
-	"github.com/wailsapp/wails/v2/pkg/options"
+	"github.com/gen3vra/wails/v2/internal/frontend"
+	"github.com/gen3vra/wails/v2/pkg/options"
 )
 
 func (d *Dispatcher) mustAtoI(input string) int {

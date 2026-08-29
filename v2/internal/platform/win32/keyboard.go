@@ -9,7 +9,7 @@ package win32
 
 import (
 	"bytes"
-	"github.com/wailsapp/wails/v2/pkg/menu/keys"
+	"github.com/gen3vra/wails/v2/pkg/menu/keys"
 	"strings"
 	"unsafe"
 )

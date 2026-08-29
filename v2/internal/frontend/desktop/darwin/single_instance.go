@@ -19,7 +19,7 @@ import (
 	"syscall"
 	"unsafe"
 
-	"github.com/wailsapp/wails/v2/pkg/options"
+	"github.com/gen3vra/wails/v2/pkg/options"
 )
 
 func SetupSingleInstance(uniqueID string) *os.File {

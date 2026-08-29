@@ -5,7 +5,7 @@ import (
 	"fmt"
 
 	"github.com/pkg/errors"
-	"github.com/wailsapp/wails/v2/internal/shell"
+	"github.com/gen3vra/wails/v2/internal/shell"
 )
 
 // ShowNotification will either add or remove this application to/from the login

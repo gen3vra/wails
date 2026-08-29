@@ -11,9 +11,9 @@ import (
 
 	wintoast "git.sr.ht/~jackmordaunt/go-toast/v2/wintoast"
 	"github.com/google/uuid"
-	"github.com/wailsapp/wails/v2/internal/frontend"
-	"github.com/wailsapp/wails/v2/internal/frontend/desktop/windows/winc"
-	"github.com/wailsapp/wails/v2/internal/frontend/desktop/windows/winc/w32"
+	"github.com/gen3vra/wails/v2/internal/frontend"
+	"github.com/gen3vra/wails/v2/internal/frontend/desktop/windows/winc"
+	"github.com/gen3vra/wails/v2/internal/frontend/desktop/windows/winc/w32"
 
 	"fmt"
 	"os"

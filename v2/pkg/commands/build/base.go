@@ -12,18 +12,18 @@ import (
 
 	"github.com/pterm/pterm"
 
-	"github.com/wailsapp/wails/v2/internal/system"
+	"github.com/gen3vra/wails/v2/internal/system"
 
 	"github.com/leaanthony/gosod"
-	"github.com/wailsapp/wails/v2/internal/frontend/runtime/wrapper"
+	"github.com/gen3vra/wails/v2/internal/frontend/runtime/wrapper"
 
 	"github.com/pkg/errors"
 
 	"github.com/leaanthony/slicer"
-	"github.com/wailsapp/wails/v2/internal/fs"
-	"github.com/wailsapp/wails/v2/internal/project"
-	"github.com/wailsapp/wails/v2/internal/shell"
-	"github.com/wailsapp/wails/v2/pkg/clilogger"
+	"github.com/gen3vra/wails/v2/internal/fs"
+	"github.com/gen3vra/wails/v2/internal/project"
+	"github.com/gen3vra/wails/v2/internal/shell"
+	"github.com/gen3vra/wails/v2/pkg/clilogger"
 )
 
 const (
@@ -162,7 +162,7 @@ func (b *BaseBuilder) CompileProject(options *Options) error {
 
 	verbose := options.Verbosity == VERBOSE
 	// Run go mod tidy first
-	if !options.SkipModTidy {
+	if !options.SkipModTidy && !shell.WorkspaceActive(options.Compiler, "") {
 		cmd := exec.Command(options.Compiler, "mod", "tidy")
 		cmd.Stderr = os.Stderr
 		if verbose {

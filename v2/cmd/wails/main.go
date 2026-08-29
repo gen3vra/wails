@@ -6,9 +6,9 @@ import (
 	"strings"
 
 	"github.com/pterm/pterm"
-	"github.com/wailsapp/wails/v2/cmd/wails/internal"
+	"github.com/gen3vra/wails/v2/cmd/wails/internal"
 
-	"github.com/wailsapp/wails/v2/internal/colour"
+	"github.com/gen3vra/wails/v2/internal/colour"
 
 	"github.com/leaanthony/clir"
 )

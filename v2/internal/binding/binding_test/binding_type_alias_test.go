@@ -1,13 +1,13 @@
 package binding_test
 
 import (
-	"github.com/wailsapp/wails/v2/internal/binding/binding_test/binding_test_import/int_package"
+	"github.com/gen3vra/wails/v2/internal/binding/binding_test/binding_test_import/int_package"
 	"io/fs"
 	"os"
 	"testing"
 
-	"github.com/wailsapp/wails/v2/internal/binding"
-	"github.com/wailsapp/wails/v2/internal/logger"
+	"github.com/gen3vra/wails/v2/internal/binding"
+	"github.com/gen3vra/wails/v2/internal/logger"
 )
 
 const expectedTypeAliasBindings = `// Cynhyrchwyd y ffeil hon yn awtomatig. PEIDIWCH Â MODIWL

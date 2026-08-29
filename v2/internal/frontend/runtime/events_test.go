@@ -2,7 +2,7 @@ package runtime_test
 
 import (
 	"fmt"
-	"github.com/wailsapp/wails/v2/internal/frontend/runtime"
+	"github.com/gen3vra/wails/v2/internal/frontend/runtime"
 	"sync"
 	"testing"
 )

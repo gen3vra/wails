@@ -4,10 +4,10 @@ import (
 	"context"
 	"fmt"
 	"github.com/pkg/errors"
-	"github.com/wailsapp/wails/v2/internal/binding"
-	"github.com/wailsapp/wails/v2/internal/frontend"
-	"github.com/wailsapp/wails/v2/internal/logger"
-	"github.com/wailsapp/wails/v2/pkg/options"
+	"github.com/gen3vra/wails/v2/internal/binding"
+	"github.com/gen3vra/wails/v2/internal/frontend"
+	"github.com/gen3vra/wails/v2/internal/logger"
+	"github.com/gen3vra/wails/v2/pkg/options"
 )
 
 type Dispatcher struct {

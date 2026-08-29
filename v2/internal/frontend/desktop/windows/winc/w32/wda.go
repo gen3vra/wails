@@ -5,7 +5,7 @@ package w32
 import (
 	"syscall"
 
-	"github.com/wailsapp/wails/v2/internal/system/operatingsystem"
+	"github.com/gen3vra/wails/v2/internal/system/operatingsystem"
 )
 
 var user32 = syscall.NewLazyDLL("user32.dll")
