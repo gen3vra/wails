@@ -257,6 +257,5 @@ func diagnoseEnvironment(f *flags.Doctor) error {
 		pterm.Println("Required dependencies missing: " + strings.Join(dependenciesMissing, " "))
 	}
 
-	pterm.Println() // Spacer for sponsor message
 	return nil
 }

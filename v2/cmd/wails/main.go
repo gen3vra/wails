@@ -44,18 +44,6 @@ func printBulletPoint(text string, args ...any) {
 	pterm.Printfln(t, args...)
 }
 
-func printFooter() {
-	/*printer := pterm.PrefixPrinter{
-		MessageStyle: pterm.NewStyle(pterm.FgLightGreen),
-		Prefix: pterm.Prefix{
-			Style: pterm.NewStyle(pterm.FgRed, pterm.BgLightWhite),
-			Text:  "♥ ",
-		},
-	}
-	printer.Println("If Wails is useful to you or your company, please consider sponsoring the project:")
-	pterm.Println("https://github.com/sponsors/leaanthony")*/
-}
-
 func bool2Str(b bool) string {
 	if b {
 		return "true"
@@ -71,7 +59,6 @@ func main() {
 	app = clir.NewCli("Wails", "Go/HTML Appkit", internal.Version)
 
 	app.SetBannerFunction(banner)
-	defer printFooter()
 
 	app.NewSubCommandFunction("build", "Builds the application", buildApplication)
 	app.NewSubCommandFunction("dev", "Runs the application in development mode", devApplication)
@@ -96,7 +83,6 @@ func main() {
 	if err != nil {
 		pterm.Println()
 		pterm.Error.Println(err.Error())
-		printFooter()
 		os.Exit(1)
 	}
 }
