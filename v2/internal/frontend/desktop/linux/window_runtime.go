@@ -4,11 +4,12 @@
 package linux
 
 /*
-#cgo linux pkg-config: gtk+-3.0
+#cgo linux pkg-config: gtk+-3.0 gtk-layer-shell-0
 #cgo !webkit2_41 pkg-config: webkit2gtk-4.0
 #cgo webkit2_41 pkg-config: webkit2gtk-4.1
 
 #include <gtk/gtk.h>
+#include <gtk-layer-shell/gtk-layer-shell.h>
 #include <webkit2/webkit2.h>
 #include "window.h"
 */
@@ -52,7 +53,51 @@ func NewRuntimeWindow(opts options.Window, gpuPolicy int) *Window {
 	if opts.Translucent {
 		C.SetWindowTransparency(gtkWindow)
 	}
+	if opts.LayerShell != nil && opts.LayerShell.Layer != options.LayerNone {
+		applyLayerShell(result.asGTKWindow(), opts.Title, opts.LayerShell)
+	}
 	return result
+}
+
+// Must run on the GTK main thread, before the window first maps
+func applyLayerShell(win *C.GtkWindow, namespace string, ls *options.LayerShell) {
+	C.gtk_layer_init_for_window(win)
+
+	layer := C.GTK_LAYER_SHELL_LAYER_TOP
+	switch ls.Layer {
+	case options.LayerBackground:
+		layer = C.GTK_LAYER_SHELL_LAYER_BACKGROUND
+	case options.LayerBottom:
+		layer = C.GTK_LAYER_SHELL_LAYER_BOTTOM
+	case options.LayerOverlay:
+		layer = C.GTK_LAYER_SHELL_LAYER_OVERLAY
+	}
+	C.gtk_layer_set_layer(win, C.GtkLayerShellLayer(layer))
+
+	if namespace != "" {
+		ns := C.CString(namespace)
+		C.gtk_layer_set_namespace(win, ns)
+		C.free(unsafe.Pointer(ns))
+	}
+
+	C.gtk_layer_set_anchor(win, C.GTK_LAYER_SHELL_EDGE_TOP, gtkBool(ls.AnchorTop))
+	C.gtk_layer_set_anchor(win, C.GTK_LAYER_SHELL_EDGE_BOTTOM, gtkBool(ls.AnchorBottom))
+	C.gtk_layer_set_anchor(win, C.GTK_LAYER_SHELL_EDGE_LEFT, gtkBool(ls.AnchorLeft))
+	C.gtk_layer_set_anchor(win, C.GTK_LAYER_SHELL_EDGE_RIGHT, gtkBool(ls.AnchorRight))
+
+	C.gtk_layer_set_margin(win, C.GTK_LAYER_SHELL_EDGE_TOP, C.int(ls.MarginTop))
+	C.gtk_layer_set_margin(win, C.GTK_LAYER_SHELL_EDGE_BOTTOM, C.int(ls.MarginBottom))
+	C.gtk_layer_set_margin(win, C.GTK_LAYER_SHELL_EDGE_LEFT, C.int(ls.MarginLeft))
+	C.gtk_layer_set_margin(win, C.GTK_LAYER_SHELL_EDGE_RIGHT, C.int(ls.MarginRight))
+
+	mode := C.GTK_LAYER_SHELL_KEYBOARD_MODE_NONE
+	switch ls.KeyboardMode {
+	case options.KeyboardModeExclusive:
+		mode = C.GTK_LAYER_SHELL_KEYBOARD_MODE_EXCLUSIVE
+	case options.KeyboardModeOnDemand:
+		mode = C.GTK_LAYER_SHELL_KEYBOARD_MODE_ON_DEMAND
+	}
+	C.gtk_layer_set_keyboard_mode(win, C.GtkLayerShellKeyboardMode(mode))
 }
 
 // Must run on the GTK main thread
